@@ -4,6 +4,7 @@ import Header from '../components/Header/Header';
 import Cards from '../components/Cards/Cards';
 import Footer from '../components/Footer/Footer';
 import Order from '../components/Order/Order';
+import Facilities from '../components/Facilities/Facilities';
 
 const Main = () => {
     return (
@@ -12,6 +13,7 @@ const Main = () => {
         <Banner/>
         <Cards/>
         <Order/>
+        <Facilities/>
         <Footer/>
         
         </div>

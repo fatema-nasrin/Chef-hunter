@@ -4,7 +4,7 @@ import { Col, Container, Row } from "react-bootstrap";
 const Footer = () => {
   return (
     <div >
-      <footer className="text-bg-dark">
+      <footer className="text-bg-dark p-5">
         <Container>
           <Row>
             <Col xs={12} sm={6} md={4}>

@@ -1,7 +1,7 @@
 import Button from "react-bootstrap/Button";
 import React, { useEffect, useState } from "react";
-import Card from "react-bootstrap/Card";
-import { Link } from "react-router-dom";
+// import Card from "react-bootstrap/Card";
+import { Container, Row, Col, Card } from 'react-bootstrap';
 
 const Cards = () => {
   const [chefs, setChefs] = useState([]);
@@ -21,7 +21,27 @@ const Cards = () => {
       <p>Experience the joy of food exploration with our website, where you can find endless inspiration, delicious recipes, and insider tips from top chefs and food experts.</p>
       </div>
 
-      <div className="d-flex flex-wrap mx-5">
+      <Row>
+          {chefs.map((chef) => (
+            <Col key={chef.name} xs={12} md={6} lg={4}>
+              <Card>
+                <Card.Img variant="top" src={chef.picture} />
+                <Card.Body>
+                  <Card.Title>{chef.name}</Card.Title>
+                  <Card.Text>
+                    Years of Experience: {chef.experience}
+                    <br />
+                    Number of Recipes: {chef.recipes}
+                    <br />
+                    Likes: {chef.likes}
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+
+      {/* <div className="d-flex flex-wrap mx-5">
         {chefs.map((chef) => (
           <Card style={{ width: "18rem",margin:"10px"}} key={chef.id}>
             <Card.Img variant="top fit"src={chef.picture}/>
@@ -35,7 +55,7 @@ const Cards = () => {
             </Card.Body>
           </Card>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
