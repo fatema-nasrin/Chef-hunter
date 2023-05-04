@@ -14,7 +14,7 @@ const Cards = () => {
   }, []);
 
   return (
-    <div>
+    <div className="px-5">
       <div className="text-center">
 
       <h1>Our Top Cook</h1>

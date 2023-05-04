@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Navbar, Nav, Offcanvas, Image, Button } from "react-bootstrap";
 import { FaUserCircle } from "react-icons/fa";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Header = () => {
+  const { user } = useContext(AuthContext);
+
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -13,7 +16,17 @@ const Header = () => {
     <div className="sticky-top">
       <Navbar bg="light" expand="lg" className="mb-3 px-4">
         <Navbar.Brand as={Link} to="/">
-       <span className="text-danger"> <img  width="40" height="40" src="/src/assets/chef-logo.png" alt="" />  SAKURA</span> KITCHEN
+          <span className="text-danger">
+            {" "}
+            <img
+              width="40"
+              height="40"
+              src="/src/assets/chef-logo.png"
+              alt=""
+            />{" "}
+            SAKURA
+          </span>{" "}
+          KITCHEN
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbar" onClick={handleShow} />
         <Navbar.Collapse id="navbar">
@@ -26,16 +39,19 @@ const Header = () => {
             </Nav.Link>
           </Nav>
           <Nav className="position-absolute top-50 end-0 translate-middle-y">
-            
-               <Image
-              src= ""
-              roundedCircle
-              width={40}
-              height={40}
-              className="mr-2"
-            />
-            
-            <Button variant="outline-secondary">Login</Button>
+            {user && (
+              <Nav.Link as={Link} to="/blog">
+                <FaUserCircle size={30} />
+              </Nav.Link>
+            )}
+
+            {user ? (
+              <Button variant="outline-secondary">Logout</Button>
+            ) : (
+              <Link to="/login">
+                <Button variant="outline-secondary">Login</Button>
+              </Link>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Navbar>
@@ -54,32 +70,6 @@ const Header = () => {
           </Nav>
         </Offcanvas.Body>
       </Offcanvas>
-
-      {/* <Navbar className="sticky-top" bg="light">
-        <Container className="inline-flex">
-          <Navbar.Brand href="#home">
-            <img className="h-50 w-50" src="/src/assets/logo2.svg" alt="" />
-          </Navbar.Brand>
-
-          <h2>SAKURA KITCHEN</h2>
-
-          
-            <Nav.Item>
-              <Nav.Link href="/home">Home</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="link-1">Blog</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Button variant="outline-secondary">
-
-              <Nav.Link eventKey="link-1">Log In</Nav.Link>
-              </Button>
-            </Nav.Item>
-           
-          
-        </Container>
-      </Navbar> */}
     </div>
   );
 };
