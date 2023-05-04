@@ -1,14 +1,17 @@
 import React from 'react';
-import Header from '../components/Header';
-import { Outlet } from 'react-router-dom';
-import Footer from '../components/Footer';
+import Banner from '../components/Banner/Banner';
+import Header from '../components/Header/Header';
+import Cards from '../components/Cards/Cards';
+import Footer from '../components/Footer/Footer';
 
 const Main = () => {
     return (
         <div>
-            <Header/>
-            <Outlet/>
-            <Footer/>
+        <Header/>
+        <Banner/>
+        <Cards/>
+        <Footer/>
+        
         </div>
     );
 };
