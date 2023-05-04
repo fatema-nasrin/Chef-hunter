@@ -1,14 +1,12 @@
-import React from 'react';
-import Header from '../components/Header/Header';
-import { Outlet } from 'react-router-dom';
+import React from "react";
+import { Outlet } from "react-router-dom";
 
 const LoginLayout = () => {
-    return (
-        <div>
-            <Header/>
-            <Outlet/>
-        </div>
-    );
+  return (
+    <div>
+      <Outlet />
+    </div>
+  );
 };
 
 export default LoginLayout;

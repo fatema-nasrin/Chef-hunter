@@ -14,7 +14,7 @@ const Cards = () => {
   }, []);
 
   return (
-    <div className="px-5">
+    <Container>
       <div className="text-center">
 
       <h1>Our Top Cook</h1>
@@ -24,7 +24,7 @@ const Cards = () => {
       <Row>
           {chefs.map((chef) => (
             <Col key={chef.name} xs={12} md={6} lg={4}>
-              <Card>
+              <Card className="my-2">
                 <Card.Img variant="top" src={chef.picture} />
                 <Card.Body>
                   <Card.Title>{chef.name}</Card.Title>
@@ -35,28 +35,13 @@ const Cards = () => {
                     <br />
                     Likes: {chef.likes}
                   </Card.Text>
+                  <Button variant="outline-info">View Recipes</Button>
                 </Card.Body>
               </Card>
             </Col>
           ))}
         </Row>
-
-      {/* <div className="d-flex flex-wrap mx-5">
-        {chefs.map((chef) => (
-          <Card style={{ width: "18rem",margin:"10px"}} key={chef.id}>
-            <Card.Img variant="top fit"src={chef.picture}/>
-            <Card.Body>
-              <Card.Title>{chef.name} </Card.Title>
-              <Card.Text>
-                <p>{chef.experience}+ Years Of Experience </p>
-                <p> <b>No.of recipes:</b> {chef.recipes}</p>
-              </Card.Text>
-              <Button variant="outline-info">View Recipes</Button>
-            </Card.Body>
-          </Card>
-        ))}
-      </div> */}
-    </div>
+    </Container>
   );
 };
 

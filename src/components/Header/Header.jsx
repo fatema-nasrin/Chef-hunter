@@ -39,11 +39,7 @@ const Header = () => {
             </Nav.Link>
           </Nav>
           <Nav className="position-absolute top-50 end-0 translate-middle-y">
-            {user && (
-              <Nav.Link as={Link} to="/blog">
-                <FaUserCircle size={30} />
-              </Nav.Link>
-            )}
+            {user && <FaUserCircle size={30} />}
 
             {user ? (
               <Button variant="outline-secondary">Logout</Button>
