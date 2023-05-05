@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Navbar, Nav, Offcanvas, Image, Button } from "react-bootstrap";
+import { Navbar, Nav, Offcanvas, Button } from "react-bootstrap";
 import { FaUserCircle } from "react-icons/fa";
 import { AuthContext } from "../../Provider/AuthProvider";
 

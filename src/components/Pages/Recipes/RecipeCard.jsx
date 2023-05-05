@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Button, Card } from "react-bootstrap";
-import { FaHeart, FaStar } from "react-icons/fa";
-import { FcLike } from "react-icons/fc";
+import { FaStar } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 

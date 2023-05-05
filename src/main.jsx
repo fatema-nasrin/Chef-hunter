@@ -5,7 +5,6 @@ import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
   createBrowserRouter,
-  Navigate,
   RouterProvider,
 } from "react-router-dom";
 import Main from "./Layout/Main.jsx";
@@ -51,7 +50,7 @@ const router = createBrowserRouter([
             element: <Register />,
           },
         ],
-      },
+      }
      
       
      
@@ -62,7 +61,8 @@ const router = createBrowserRouter([
   {
     path: "/blog",
     element: <Blog />,
-  },
+  }
+ 
  
  
 ]);

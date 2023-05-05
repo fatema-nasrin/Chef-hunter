@@ -7,7 +7,8 @@ import RecipeCard from "./RecipeCard";
 const Recipes = () => {
   const chefInfo = useLoaderData();
   console.log(chefInfo);
-  const { name, picture, bio, likes, experience,recipes,chefRecipe} = chefInfo;
+  const { name, picture, bio, likes, experience, recipes, chefRecipe } =
+    chefInfo;
 
   return (
     <div>
@@ -39,21 +40,21 @@ const Recipes = () => {
       </Container>
 
       <div className="container my-5">
-      <h2 className="text-center mb-5">Chef's Signature Recipes</h2>
-      <div className="row">
-        {chefRecipe.map((recipe, index) => (
-          <div key={index} className="col-md-4 mb-4">
-            <RecipeCard
-              recipeImage={recipe.recipeImage}
-              recipe_name={recipe.recipe_name}
-              ingredients={recipe.ingredients}
-              cooking_method={recipe.cooking_method}
-              rating={recipe.rating}
-            />
-          </div>
-        ))}
+        <h2 className="text-center mb-5">Chef's Signature Recipes</h2>
+        <div className="row">
+          {chefRecipe.map((recipe, index) => (
+            <div key={index} className="col-md-4 mb-4">
+              <RecipeCard
+                recipeImage={recipe.recipeImage}
+                recipe_name={recipe.recipe_name}
+                ingredients={recipe.ingredients}
+                cooking_method={recipe.cooking_method}
+                rating={recipe.rating}
+              />
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
     </div>
   );
 };
