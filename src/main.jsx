@@ -15,6 +15,8 @@ import LoginLayout from "./Layout/LoginLayout.jsx";
 import Login from "./components/Pages/Login/Login/Login.jsx";
 import Register from "./components/Pages/Login/Register/Register.jsx";
 import Error from "./components/ErrorPage/Error.jsx";
+import RecipeDetailsLayout from "./Layout/RecipeDetailsLayout/RecipeDetailsLayout.jsx";
+import Recipes from "./components/Pages/Recipes/Recipes.jsx";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +27,16 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Main />,
+      },
+      {
+        path:"/",
+        element:<RecipeDetailsLayout/>,
+        
+      },
+      {
+        path:"recipes/:id",
+        element:<Recipes/>,
+        loader:({params}) => fetch(`http://localhost:5000/chefs/${params.id}`)
       },
       {
         path: "/",
@@ -40,12 +52,19 @@ const router = createBrowserRouter([
           },
         ],
       },
+     
+      
+     
     ],
+    
   },
+  
   {
     path: "/blog",
     element: <Blog />,
   },
+ 
+ 
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

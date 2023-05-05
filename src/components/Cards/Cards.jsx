@@ -1,7 +1,7 @@
 import Button from "react-bootstrap/Button";
 import React, { useEffect, useState } from "react";
-// import Card from "react-bootstrap/Card";
 import { Container, Row, Col, Card } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 
 const Cards = () => {
   const [chefs, setChefs] = useState([]);
@@ -35,7 +35,9 @@ const Cards = () => {
                     <br />
                     Likes: {chef.likes}
                   </Card.Text>
+                  <Link to= {`recipes/${chef.id}`}>
                   <Button variant="outline-info">View Recipes</Button>
+                  </Link>
                 </Card.Body>
               </Card>
             </Col>
