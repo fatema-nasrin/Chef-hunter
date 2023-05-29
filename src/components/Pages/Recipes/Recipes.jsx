@@ -3,10 +3,11 @@ import { useLoaderData } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import { FaHeart, FaBook } from "react-icons/fa";
 import RecipeCard from "./RecipeCard";
+import useTitle from "../../hooks/useTitle";
 
 const Recipes = () => {
+  useTitle('chef-recipe')
   const chefInfo = useLoaderData();
-  console.log(chefInfo);
   const { name, picture, bio, likes, experience, recipes, chefRecipe } =
     chefInfo;
 

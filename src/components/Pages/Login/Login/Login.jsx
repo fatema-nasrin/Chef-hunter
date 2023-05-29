@@ -1,11 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Form, Button, Row, Col, Container } from "react-bootstrap";
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../../Provider/AuthProvider";
+import useTitle from "../../../hooks/useTitle";
 
 const Login = () => {
+  useTitle('login')
   const { signIn } = useContext(AuthContext);
+  const [error, setError] = useState("");
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -14,6 +17,18 @@ const Login = () => {
     const password = form.password.value;
     console.log(email, password);
 
+
+    setError("");
+
+    if (!/(?=.*[A-Z])/.test(password)) {
+      setError("please add uppercase");
+      return;
+    } else if (!/ (?=.*[0-9]) /.test(password)) {
+      setError("please add at least two number");
+    } else if (password.length < 6) {
+      setError("please enter 6 ch-rt");
+      return;
+    }
     signIn(email,password)
     .then(result => {
         const loggedUser = result.user;
@@ -63,6 +78,7 @@ const Login = () => {
         <p className="text-center mt-4">
           Don't have an account? <Link to="/register">Sign up</Link>
         </p>
+        <p className="text-danger">{error} </p>
       </Form>
     </Container>
   );

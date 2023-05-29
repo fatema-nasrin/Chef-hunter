@@ -29,7 +29,7 @@ const Footer = () => {
                 <li>123 Main Street</li>
                 <li>Anytown, USA 12345</li>
                 <li>Phone: (555) 555-5555</li>
-                <li>Email: info@myrestaurant.com</li>
+                <li>Email: info@sakurakitchen.com</li>
               </ul>
             </Col>
             <Col xs={12} md={4}>
