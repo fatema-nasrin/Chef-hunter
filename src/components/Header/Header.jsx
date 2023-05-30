@@ -21,7 +21,7 @@ const Header = () => {
             <img
               width="40"
               height="40"
-              src="/src/assets/chef-logo.png"
+              src="https://i.ibb.co/SrXfZ8P/chef-logo.png"
               alt=""
             />{" "}
             SAKURA

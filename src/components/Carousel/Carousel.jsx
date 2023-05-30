@@ -8,21 +8,21 @@ const CarouselSection = () => {
       description:
         "Make your special day unforgettable with our exquisite wedding catering services.",
       buttonText: "Book Now",
-      image: "/public/wedding.jpg",
+      image: "https://i.ibb.co/qpKCR83/Wedding-Catering-Newnan-Georgia-2-e1577820879492.jpg",
     },
     {
       title: "Corporate Events",
       description:
         "Impress your clients and colleagues with our professional corporate event catering services.",
       buttonText: "Book Now",
-      image: "/public/corporatejpeg.jpeg",
+      image: "https://i.ibb.co/vLQRcbD/Corporate-Events-97.jpg",
     },
     {
       title: "Birthday Parties",
       description:
         "Make your birthday celebration extra special with our delectable catering options.",
       buttonText: "Book Now",
-      image: "/public/birthday.jpeg",
+      image: "https://i.ibb.co/C8jTkn2/9a948c5ce556ddec478f8849d983a9ab069081f9-4126x2848.jpg",
     },
   ];
 
