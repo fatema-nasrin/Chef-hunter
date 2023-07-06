@@ -1,13 +1,13 @@
 import React, { useContext, useState } from "react";
 import { Form, Button, Row, Col, Container } from "react-bootstrap";
 import { FaGoogle, FaGithub } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { AuthContext } from "../../../../Provider/AuthProvider";
 import useTitle from "../../../hooks/useTitle";
 
 const Login = () => {
   useTitle('login')
-  const { signIn } = useContext(AuthContext);
+  const { signIn,handleGoogleSignIn ,handleGithubSignIn} = useContext(AuthContext);
   const [error, setError] = useState("");
 
   const handleLogin = (event) => {
@@ -39,6 +39,23 @@ const Login = () => {
     })
   };
 
+ 
+
+  const googleSignIn = () => {
+    handleGoogleSignIn().then((result) => {
+      const loggedUser = result.user;
+      console.log(loggedUser);
+      Navigate('/')
+    } )
+  }
+  const githubSignIn = () => {
+    handleGithubSignIn().then((result) => {
+      const loggedUser = result.user;
+      console.log(loggedUser);
+  
+    } )
+  }
+
   return (
     <Container className="w-25 mx-auto">
       <Form onSubmit={handleLogin}>
@@ -61,14 +78,14 @@ const Login = () => {
 
         <Row className="mt-4">
           <Col>
-            <Button variant="outline-primary" className="w-100 mb-2">
+            <Button onClick={() => googleSignIn()}  variant="outline-primary" className="w-100 mb-2">
               <FaGoogle className="mr-2 mx-1" />
               Sign In with Google
             </Button>
           </Col>
 
           <Col>
-            <Button variant="outline-secondary" className="w-100 mb-2">
+            <Button onClick={() => githubSignIn()} variant="outline-secondary" className="w-100 mb-2">
               <FaGithub className="mr-2 mx-1" />
               Sign In with Github
             </Button>
